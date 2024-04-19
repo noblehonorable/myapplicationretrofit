@@ -1,87 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    android:orientation="vertical"
     tools:context=".MusicActivity">
 
-    <!-- Card Image -->
-    <ImageView
-        android:id="@+id/cardimg"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:src="@drawable/cd" />
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Title Layout -->
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/prgbarmusic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/Red"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
-        android:id="@+id/titleLayout"
+        android:id="@+id/bottomNavigationBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/musiclayout"
-        android:layout_marginBottom="15dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:text="hello"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
-    </LinearLayout>
-
-    <!-- Music Controls Layout -->
-    <LinearLayout
-        android:id="@+id/musiclayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:background="@android:color/black"
         android:orientation="horizontal"
-        android:weightSum="4">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <!-- Previous Button -->
-        <ImageView
-            android:id="@+id/leftnextbtn"
+        <!-- Button 1 -->
+        <Button
+            android:id="@+id/button1"
             android:layout_width="0dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:src="@drawable/nextbtnleft" />
+            android:text="Home"/>
 
-        <!-- Play Button -->
-        <ImageView
-            android:id="@+id/playbtn"
+        <!-- Button 2 -->
+        <Button
+            android:id="@+id/button2"
             android:layout_width="0dp"
+            android:backgroundTint="@color/black"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:layout_weight="1"
-            android:src="@drawable/playbtn" />
+            android:text="Trailers"/>
 
-        <!-- Pause Button -->
-        <ImageView
-            android:id="@+id/pausebtn"
+        <!-- Button 3 -->
+        <Button
+            android:id="@+id/button3"
             android:layout_width="0dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:textStyle="bold"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:layout_weight="1"
-            android:src="@drawable/pausebtn" />
-
-        <!-- Next Button -->
-        <ImageView
-            android:id="@+id/rightnextbtn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:src="@drawable/nextbtnright" />
+            android:text="Music"/>
 
     </LinearLayout>
-
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

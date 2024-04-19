@@ -8,4 +8,6 @@
     <color name="Coral">#FF7F50</color> <!-- Coral -->
 
     <color name="Red">#B50000</color>
+
+    <color name="grey">#5A5A5A</color>
 </resources>

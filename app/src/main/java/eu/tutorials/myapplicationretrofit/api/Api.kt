@@ -3,7 +3,6 @@ package eu.tutorials.myapplicationretrofit.api
 import eu.tutorials.myapplicationretrofit.adapter.DetailsMovieResponse
 import retrofit2.Call
 import eu.tutorials.myapplicationretrofit.response.MovieListResponse
-import eu.tutorials.myapplicationretrofit.response.TopRatedResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -15,8 +14,6 @@ interface Api {
     @GET("movie/{movie_id}")
     fun getMoviedetails(@Path("movie_id") id:Int): Call<DetailsMovieResponse>
 
-    @GET("movie/top_rated")
-    fun getTopRatedMovie(@Query("page") page: Int): Call<TopRatedResponse>
 
 
 }
